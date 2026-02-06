@@ -72,7 +72,7 @@
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
       # Add pnpm to PATH
-      export PNPM_HOME="{{ clawdbot_home }}/.local/share/pnpm"
+      export PNPM_HOME="{{ clawdbot_home }}/.local/bin"
       export PATH="{{ clawdbot_home }}/.local/bin:$PNPM_HOME:$PATH"
 
       # Color support for common tools
@@ -101,7 +101,7 @@
       eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
       # Add pnpm to PATH
-      export PNPM_HOME="{{ clawdbot_home }}/.local/share/pnpm"
+      export PNPM_HOME="{{ clawdbot_home }}/.local/bin"
       export PATH="{{ clawdbot_home }}/.local/bin:$PNPM_HOME:$PATH"
 
       # Color support for common tools

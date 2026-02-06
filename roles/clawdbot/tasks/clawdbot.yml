@@ -39,7 +39,9 @@
     cmd: |
       pnpm config set global-dir {{ clawdbot_home }}/.local/share/pnpm
       pnpm config set global-bin-dir {{ clawdbot_home }}/.local/bin
+      pnpm config set store-dir {{ clawdbot_home }}/.local/share/pnpm/store
     executable: /bin/bash
+    chdir: "{{ clawdbot_home }}"
   become: true
   become_user: "{{ clawdbot_user }}"
   changed_when: true  # Always consider changed as pnpm config may update
@@ -63,7 +65,7 @@
     marker: "# {mark} ANSIBLE MANAGED BLOCK - Clawdbot pnpm"
     block: |
       # pnpm configuration
-      export PNPM_HOME="{{ clawdbot_home }}/.local/share/pnpm"
+      export PNPM_HOME="{{ clawdbot_home }}/.local/bin"
       export PATH="{{ clawdbot_home }}/.local/bin:$PNPM_HOME:$PATH"
     create: true
     owner: "{{ clawdbot_user }}"
